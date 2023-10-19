@@ -109,7 +109,6 @@
 #endregion
 
 #region classes
-
 using FCCApp;
 
 Employee employee1 = new Employee("Dominik", "Bednarz", 24);
@@ -140,6 +139,7 @@ List<Employee> employees = new List<Employee>()
 };
 
 int maxResult = -1;
+
 Employee employeeWithMaxResult = null;
 
 foreach (Employee employee in employees)
@@ -155,6 +155,4 @@ Console.WriteLine($"Najlepszy wynik to: {employeeWithMaxResult.Result}");
 Console.WriteLine($"Imię pracownika z najlepszym wynikiem to: {employeeWithMaxResult.Name}");
 Console.WriteLine($"Nazwisko pracownika z najlepszym wynikiem to: {employeeWithMaxResult.Surname}");
 Console.WriteLine($"Pracownik ten ma lat: {employeeWithMaxResult.Age}");
-
-
 #endregion
