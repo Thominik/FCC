@@ -3,7 +3,6 @@
     public class User
     {
         private List<int> score = new List<int>();
-
         public string Login { get; private set; }
         public string Password { get; private set; }
 
