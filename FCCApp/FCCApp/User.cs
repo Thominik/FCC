@@ -25,5 +25,15 @@
         {
             this.score.Add(number);
         }
+
+        public void RemoveScore(int number)
+        {
+            this.score.Add(number);
+        }
+
+        public void RemoveScoreWithoutMinusSign(int number)
+        {
+            this.score.Add(number * -1);
+        }
     }
 }

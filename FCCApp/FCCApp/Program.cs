@@ -14,7 +14,7 @@ employee2.AddScoreToEmployee(1);
 employee2.AddScoreToEmployee(1);
 employee2.AddScoreToEmployee(1);
 employee2.AddScoreToEmployee(1);
-employee2.AddScoreToEmployee(1);
+employee2.AddScoreToEmployee(-1);
 
 employee3.AddScoreToEmployee(2);
 employee3.AddScoreToEmployee(10);
