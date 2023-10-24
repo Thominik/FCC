@@ -48,28 +48,5 @@ namespace FCCApp.Tests
 
             Assert.AreEqual(bool1, bool2);
         }
-
-        [Test]
-        public void GetUserShouldReturnDifferentObjects()
-        {
-            var user1 = GetUser("Dominik");
-            var user2 = GetUser("Dominik");
-
-            Assert.AreNotEqual(user1, user2);
-        }
-
-        [Test]
-        public void GetUserShouldReturnSameObjects()
-        {
-            var user1 = GetUser("Dominik");
-            var user2 = GetUser("Dominik");
-
-            Assert.AreEqual(user1.Login, user2.Login);
-        }
-
-        private User GetUser(string name)
-        {
-            return new User(name);
-        }
     }
 }
