@@ -39,10 +39,8 @@
 
         public void AddGrade(double grade)
         {
-            if (float.TryParse(grade.ToString(), out float result))
-                AddGrade(result);
-            else
-                Console.WriteLine("Double is not a float value");
+            var doubleAsFloat = (float)grade;
+            AddGrade(doubleAsFloat);
         }
 
         public void AddGrade(int grade)
