@@ -10,11 +10,11 @@ public class EmployeeTests
         employee.AddGrade(6);
         employee.AddGrade(5);
 
-        var statisticks = employee.GetStatistics();
-        
-        Assert.AreEqual(5f, statisticks.Average);
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual(5f, statistics.Average);
     }
-    
+
     [Test]
     public void MinShouldReturnCorrectValue()
     {
@@ -23,11 +23,11 @@ public class EmployeeTests
         employee.AddGrade(6);
         employee.AddGrade(5);
 
-        var statisticks = employee.GetStatistics();
-        
-        Assert.AreEqual(4f, statisticks.Min);
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual(4f, statistics.Min);
     }
-    
+
     [Test]
     public void MaxShouldReturnCorrectValue()
     {
@@ -36,8 +36,69 @@ public class EmployeeTests
         employee.AddGrade(6);
         employee.AddGrade(5);
 
-        var statisticks = employee.GetStatistics();
-        
-        Assert.AreEqual(6f, statisticks.Max);
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual(6f, statistics.Max);
+    }
+
+    [Test]
+    public void AverangeLetterShouldReturnCorrectValue()
+    {
+        var employee = new Employee("Dominik", "Bednarz");
+        employee.AddGrade(100);
+        employee.AddGrade(50);
+        employee.AddGrade(30);
+
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual('B', statistics.AverageLetter);
+    }
+
+    [Test]
+    public void LetterShouldReturnCorrectAverangeValue()
+    {
+        var employee = new Employee("Dominik", "Bednarz");
+        employee.AddGrade('A');
+        employee.AddGrade('B');
+
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual(90, statistics.Average);
+    }
+
+    [Test]
+    public void LetterShouldReturnCorrectMinValue()
+    {
+        var employee = new Employee("Dominik", "Bednarz");
+        employee.AddGrade('A');
+        employee.AddGrade('B');
+
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual(80, statistics.Min);
+    }
+
+    [Test]
+    public void LetterShouldReturnCorrectAMaxValue()
+    {
+        var employee = new Employee("Dominik", "Bednarz");
+        employee.AddGrade('A');
+        employee.AddGrade('B');
+
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual(100, statistics.Max);
+    }
+
+    [Test]
+    public void LetterShouldReturnCorrectAverangeLetterValue()
+    {
+        var employee = new Employee("Dominik", "Bednarz");
+        employee.AddGrade('A');
+        employee.AddGrade('D');
+
+        var statistics = employee.GetStatistics();
+
+        Assert.AreEqual('B', statistics.AverageLetter);
     }
 }
