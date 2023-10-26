@@ -18,7 +18,7 @@
             if (grade >= 0 && grade <= 100)
                 grades.Add(grade);
             else
-                Console.WriteLine("invalid grade value");
+                throw new Exception("invalid grade value");
         }
 
         public void AddGrade(string grade)
@@ -26,7 +26,7 @@
             if (float.TryParse(grade, out float result))
                 AddGrade(result);
             else
-                Console.WriteLine("String is not a float value");
+                throw new Exception("String is not a float value");
         }
         
         public void AddGrade(char grade)
@@ -54,8 +54,7 @@
                     grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Invalid value");
-                    break;
+                    throw new Exception("Invalid value");
             }
         }
 
