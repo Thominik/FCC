@@ -30,11 +30,33 @@
         }
         
         public void AddGrade(char grade)
-        {
-            if (char.IsDigit(grade))
-                AddGrade((float)char.GetNumericValue(grade));
-            else
-                Console.WriteLine("Char is not a float value");
+        {  
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    grades.Add(100); 
+                    break;
+                case 'B':
+                case 'b':
+                    grades.Add(80);
+                    break;
+                case 'C':
+                case 'c':
+                    grades.Add(60);
+                    break;
+                case 'D':
+                case 'd':
+                    grades.Add(40);
+                    break;
+                case 'E':
+                case 'e':
+                    grades.Add(20);
+                    break;
+                default:
+                    Console.WriteLine("Invalid value");
+                    break;
+            }
         }
 
         public void AddGrade(double grade)
@@ -64,6 +86,25 @@
             }
 
             statistics.Average /= grades.Count;
+
+            switch(statistics.Average)
+            {
+                case var average when average >= 80:
+                    statistics.AverageLetter = 'A';
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = 'B';
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = 'C';
+                    break;
+                case var average when average >= 20:
+                    statistics.AverageLetter = 'D';
+                    break;
+                default:
+                    statistics.AverageLetter = 'E';
+                    break;
+            }
             
             return statistics;
         }
