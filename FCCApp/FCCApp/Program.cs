@@ -1,9 +1,23 @@
 ﻿using FCCApp;
 
+Console.WriteLine("Witamy w programie do oceny użytkowników!");
+Console.WriteLine();
+Console.WriteLine("Pamiętaj, że jeśli chcesz wyjść to wpisz q");
+Console.WriteLine();
+
 var employee = new Employee("Dominik", "Bednarz");
-employee.AddGrade(2d);
-employee.AddGrade(2);
-employee.AddGrade('A');
+
+while (true)
+{
+    Console.WriteLine("Podaj kolejną ocenę pracownika:");
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break;
+    }
+    employee.AddGrade(input);
+}
+
 
 var statistics = employee.GetStatistics();
 
