@@ -1,17 +1,11 @@
 ﻿namespace FCCApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
 
-        public Employee(string name, string surname)
-        {
-            Name = name;
-            Surname = surname;
-        }
-
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
+        public Employee(string name, string surname, char gender, int age)
+            : base(name, surname, gender, age) { }
 
         public void AddGrade(float grade)
         {
@@ -28,14 +22,14 @@
             else
                 throw new Exception("String is not a float value");
         }
-        
+
         public void AddGrade(char grade)
-        {  
+        {
             switch (grade)
             {
                 case 'A':
                 case 'a':
-                    AddGrade(100); 
+                    AddGrade(100);
                     break;
                 case 'B':
                 case 'b':
@@ -86,7 +80,7 @@
 
             statistics.Average /= grades.Count;
 
-            switch(statistics.Average)
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
                     statistics.AverageLetter = 'A';
@@ -104,7 +98,7 @@
                     statistics.AverageLetter = 'E';
                     break;
             }
-            
+
             return statistics;
         }
     }
