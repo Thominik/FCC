@@ -11,22 +11,36 @@
 
         public override void AddGrade(float grade)
         {
-            using (var writer = File.AppendText(fileName))
+            if (grade >= 0 && grade <= 100)
             {
-                writer.WriteLine(grade);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(grade);
+                }
             }
+            else
+                throw new Exception("Invalid float grade value!");
         }
 
         public override void AddGrade(double grade)
         {
-            var doubleAsFloat = (float)grade;
-            AddGrade(doubleAsFloat);
+            if (grade >= 0 && (double)grade <= 100)
+            {
+                var doubleAsFloat = (float)grade;
+                AddGrade(doubleAsFloat);
+            }
+            else
+                throw new Exception("Invalid double grade value!");
         }
 
         public override void AddGrade(int grade)
         {
-            var intAsFloat = (float)grade;
-            AddGrade(intAsFloat);
+            if (grade >= 0 && grade <= 100)
+            {
+                var intAsFloat = (float)grade;
+                AddGrade(intAsFloat);
+            }
+            else throw new Exception("Invalid grade value!");
         }
 
         public override void AddGrade(char grade)
