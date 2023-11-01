@@ -21,6 +21,7 @@ Console.WriteLine("2. Wyświetlić statystyki dla pracownika");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Dominik", "Bednarz");
+employee.GradeAdded += EmployeeGradeAdded;
 
 var menuInput = Console.ReadLine();
 
@@ -40,7 +41,6 @@ switch (menuInput)
             try
             {
                 employee.AddGrade(input);
-                employee.GradeAdded += EmployeeGradeAdded;
             }
             catch (Exception ex)
             {
