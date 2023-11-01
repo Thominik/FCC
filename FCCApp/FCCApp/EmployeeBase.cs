@@ -24,5 +24,9 @@
         public abstract void AddGrade(string grade);
 
         public abstract Statistics GetStatistics();
+
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+        public abstract event GradeAddedDelegate GradeAdded;
     }
 }

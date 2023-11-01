@@ -40,6 +40,7 @@ switch (menuInput)
             try
             {
                 employee.AddGrade(input);
+                employee.GradeAdded += EmployeeGradeAdded;
             }
             catch (Exception ex)
             {
@@ -57,6 +58,7 @@ switch (menuInput)
         break;
 }
 
-
-
-
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę");
+}
